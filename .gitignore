@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files and OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# REPL and debug history
+.node_repl_history
+*.swp
+*~
+
+# Coverage reports
+coverage/
+
+# npm or yarn caches
+.npm/
+.yarn/
+
+# TypeScript cache and build info
+*.tsbuildinfo
+
+# Miscellaneous
+*.tmp
+*.temp
+
+# macOS specific files
+.AppleDouble
+.LSOverride
+
+# Other build artifacts (if applicable)
+*.out
+*.exe
+*.dll
