@@ -1,0 +1,6 @@
+### GET request to example server
+GET http://localhost:3000/api/product
+
+###
+
+PUT https://localhost:3000/api/product/1
