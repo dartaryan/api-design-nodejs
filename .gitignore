@@ -45,6 +45,7 @@ coverage/
 *.temp
 *.docx
 *.http
+docs/
 
 # macOS specific files
 .AppleDouble
