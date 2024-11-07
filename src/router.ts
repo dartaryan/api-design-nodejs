@@ -1,31 +1,26 @@
 import {Router} from 'express';
 import {body, check, oneOf, validationResult} from "express-validator";
 import {handleInputErrors} from "./modules/middleware";
+import {createProduct, deleteProduct, getOneProduct, getProducts} from "./handlers/product";
+import {createUpdate, deleteUpdate, getOneUpdate, getUpdates, updateUpdate} from "./handlers/update";
 
 const router = Router();
 
 
 /** Product routes */
 
-router.get('/product', (req, res) => {
-    res.json({message: 'Hello Ben!'});
-});
-router.get('/product/:id', () => {
-});
+router.get('/product', getProducts);
+router.get('/product/:id', getOneProduct);
 router.put('/product/:id', body('name').isString(), handleInputErrors, (req, res) => {
 
 });
-router.post('/product', () => {
-});
-router.delete('/product/:id', () => {
-});
+router.post('/product', body('name').isString(), handleInputErrors, createProduct);
+router.delete('/product/:id', deleteProduct);
 
 /** Update routes */
 
-router.get('/update', () => {
-});
-router.get('/update/:id', () => {
-});
+router.get('/update', getUpdates);
+router.get('/update/:id', getOneUpdate);
 router.put('/update/:id',
     body('title').optional,
     body('body').optional,
@@ -36,17 +31,13 @@ router.put('/update/:id',
     ]),
     body('version').optional,
     body('productId').optional,
-    () => {
-    });
+    updateUpdate);
 router.post('/update',
     body('title').exists().isString(),
     body('body').exists().isString(),
     body('productId').exists().isString(),
-    () => {
-    });
-router.delete('/update/:id', () => {
-});
-
+    createUpdate);
+router.delete('/update/:id', deleteUpdate);
 /** update points routes */
 
 router.get('/updatepoint', () => {
